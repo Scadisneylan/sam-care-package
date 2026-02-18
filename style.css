@@ -1,0 +1,58 @@
+/* 1. Grid Layout for the wrapper */
+.cards-wrapper {
+    display: grid;
+    /* Creates a responsive 3-column grid with a minimum width of 300px per column */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px; /* Space between cards */
+    padding: 24px;
+}
+
+/* 2. Main card container */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px; /* Set a fixed height */
+    perspective: 1000px; /* Gives the 3D effect */
+}
+
+/* 3. Inner container for the flip animation */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Smooth transition for the flip */
+    transform-style: preserve-3d; /* Ensures the children operate in 3D space */
+}
+
+/* 4. The actual flip action on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flips the inner container horizontally */
+}
+
+/* 5. Positioning and hiding the back face */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden; /* Hides the back of the element when facing away */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* 6. Styling for the faces */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg); /* Initially rotate the back face so it starts hidden */
+}
