@@ -149,7 +149,7 @@
     padding: 1rem;
     z-index: 50;
   }
-  .hidden{ display: none !important; }
+  [hidden] { display: none !important; }
   
   .modal-content{
     width: min(760px, 96vw);
