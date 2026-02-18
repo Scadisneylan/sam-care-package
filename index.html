@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Care Package Companion</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Care Package Companion Instructions</h1>
+    <p>A guide to what’s in the box.</p>
+  </header>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- Controls -->
+    <section>
+      <label for="search">Search items</label>
+      <input id="search" type="text" placeholder="e.g. tea, electrolytes">
+      <button id="pickRandom">Pick for me</button>
+    </section>
+
+    <!-- Item list -->
+    <section>
+      <h2>Items</h2>
+      <div id="items">
+        <!-- Cards will go here -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal (hidden by default) -->
+  <div id="modal" hidden>
+    <div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+
+      <h3>When to use</h3>
+      <ul id="modalWhen"></ul>
+
+      <h3>How to use</h3>
+      <ul id="modalHow"></ul>
+
+      <h3>Note</h3>
+      <p id="modalNote"></p>
+
+      <button id="newNote" type="button">New note</button>
+      <button id=""closeModal" type="button">Close</button>
+    </div>
+  </div>
+
+</body>
+<script src="app.js"></script>
+</html>
+
