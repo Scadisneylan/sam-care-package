@@ -1,188 +1,28 @@
-/* --- Pastel theme tokens --- */
-:root{
-    --bg1: #FFF6FB;
-    --bg2: #F2FBFF;
-    --ink: #2b2b2b;
-    --muted: rgba(43,43,43,.7);
-  
-    --card: rgba(255,255,255,.78);
-    --stroke: rgba(0,0,0,.06);
-    --shadow: 0 10px 30px rgba(30, 30, 60, .10);
-  
-    --accent: #ff7ac8;
-    --accent2: #7cd8ff;
-    --accent3: #b8f7d1;
-    --radius: 18px;
+<file name=index.html path=/Users/sarahcahalan/sam-care-package>
+  ...
+  <div id="modal" class="modal" hidden>
+    <div class="modal-content">
+      <div class="modal-top">
+        <h2 id="modalTitle"></h2>
+        <button id="closeModal" type="button" class="close-x">Close</button>
+      </div>
+      <p id="modalDescription"></p>
+      ...
+    </div>
+  </div>
+  ...
+</file>
+
+<file name=app.js path=/Users/sarahcahalan/sam-care-package>
+  ...
+  function closeModal() {
+    modal.hidden = true;
+    activeItem = null;
   }
-  
-  body{
-    color: var(--ink);
-    background:
-      radial-gradient(800px 600px at 15% 0%, rgba(255,122,200,.25), transparent 55%),
-      radial-gradient(900px 650px at 85% 20%, rgba(124,216,255,.22), transparent 55%),
-      radial-gradient(900px 650px at 45% 110%, rgba(184,247,209,.24), transparent 55%),
-      linear-gradient(180deg, var(--bg1), var(--bg2));
+  ...
+  function openModal(item) {
+    modal.hidden = false;
+    ...
   }
-  
-  /* --- Layout shell --- */
-  .app-shell{ padding: 2.2rem 0 3rem; }
-  .app-header{
-    display:flex;
-    gap: 1.4rem;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 1.4rem;
-  }
-  .app-title{ margin-bottom: .2rem; }
-  .app-subtitle{ margin: 0; color: var(--muted); max-width: 58ch; }
-  
-  .header-actions input{
-    min-width: min(360px, 85vw);
-    border-radius: 999px;
-    background: rgba(255,255,255,.9);
-    border: 1px solid var(--stroke);
-    box-shadow: 0 6px 18px rgba(0,0,0,.06);
-  }
-  
-  /* --- Rule of thirds columns --- */
-  .thirds{ align-items: start; }
-  .column-67{ flex: 0 0 66.666%; max-width: 66.666%; }
-  .column-33{ flex: 0 0 33.333%; max-width: 33.333%; }
-  
-  @media (max-width: 900px){
-    .column-67, .column-33{ flex: 0 0 100%; max-width: 100%; }
-  }
-  
-  /* --- Panels / cards --- */
-  .panel{
-    background: var(--card);
-    border: 1px solid var(--stroke);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 1.4rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .panel-sparkle{
-    position: relative;
-    overflow: hidden;
-  }
-  .panel-sparkle::after{
-    content:"";
-    position:absolute;
-    inset:-60px;
-    background:
-      radial-gradient(circle at 20% 30%, rgba(255,122,200,.22), transparent 35%),
-      radial-gradient(circle at 70% 20%, rgba(124,216,255,.22), transparent 40%),
-      radial-gradient(circle at 55% 75%, rgba(184,247,209,.22), transparent 40%);
-    pointer-events:none;
-  }
-  
-  .muted{ color: var(--muted); }
-  .tiny{ font-size: .85em; }
-  
-  .toolbar{ margin-bottom: .8rem; }
-  
-  /* category chips */
-  .chip-row{ display:flex; flex-wrap: wrap; gap: .6rem; }
-  .chip{
-    display:inline-flex;
-    gap:.4rem;
-    align-items:center;
-    padding: .55rem .9rem;
-    border-radius: 999px;
-    border: 1px solid var(--stroke);
-    background: rgba(255,255,255,.85);
-    cursor: pointer;
-    user-select: none;
-  }
-  .chip.active{ outline: 3px solid rgba(255,122,200,.25); }
-  
-  /* cards grid */
-  .cards .column{
-    padding: .6rem;
-  }
-  .card{
-    height: 100%;
-    background: rgba(255,255,255,.86);
-    border: 1px solid var(--stroke);
-    border-radius: var(--radius);
-    padding: 1.2rem 1.2rem 1rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,.06);
-    cursor: pointer;
-    transition: transform .12s ease, box-shadow .12s ease;
-    position: relative;
-  }
-  .card:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0,0,0,.10);
-  }
-  
-  .badge{
-    position:absolute;
-    top: 12px;
-    right: 12px;
-    font-size: .85em;
-    padding: .25rem .6rem;
-    border-radius: 999px;
-    border: 1px solid var(--stroke);
-    background: rgba(255,255,255,.9);
-  }
-  
-  /* Pastel button */
-  .button.pastel{
-    border: none;
-    background: linear-gradient(90deg, rgba(255,122,200,.95), rgba(124,216,255,.95));
-    color: white;
-    box-shadow: 0 10px 22px rgba(255,122,200,.18);
-  }
-  .button.pastel:hover{ filter: brightness(1.02); }
-  
-  /* --- Modal --- */
-  .modal{
-    position: fixed;
-    inset: 0;
-    background: rgba(20, 20, 30, .45);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    z-index: 50;
-  }
-  [hidden] { display: none !important; }
-  
-  .modal-content{
-    width: min(760px, 96vw);
-    max-height: 88vh;
-    overflow: auto;
-    background: rgba(255,255,255,.92);
-    border: 1px solid var(--stroke);
-    border-radius: calc(var(--radius) + 6px);
-    box-shadow: 0 18px 60px rgba(0,0,0,.18);
-    padding: 1.4rem;
-  }
-  
-  .modal-top{
-    display:flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 1rem;
-  }
-  .close-x{
-    border-radius: 999px;
-    padding: .4rem .8rem;
-  }
-  
-  .modal-grid{ margin-top: .6rem; }
-  .modal-actions{ display:flex; gap: .8rem; flex-wrap: wrap; margin-top: .6rem; }
-  .note{
-    border-left: 4px solid rgba(255,122,200,.65);
-    padding-left: .8rem;
-  }
-  .cautions{
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: var(--radius);
-    background: rgba(255, 240, 246, .8);
-    border: 1px solid rgba(255,122,200,.18);
-  }
+  ...
+</file>
