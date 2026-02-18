@@ -3,8 +3,8 @@
     display: grid;
     /* Creates a responsive 3-column grid with a minimum width of 300px per column */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px; /* Space between cards */
-    padding: 24px;
+    gap: 15px; /* Space between cards */
+    padding: 20px;
 }
 
 /* 2. Main card container */
@@ -37,7 +37,8 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden; /* Hides the back of the element when facing away */
-    border-radius: 12px;
+    border-radius: 25px;
+    background-color: #fadadd;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +53,7 @@
 }
 
 .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
+    background-color: #fadadd;
+    color: black;
     transform: rotateY(180deg); /* Initially rotate the back face so it starts hidden */
 }
