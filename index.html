@@ -7,12 +7,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.grid {
+.wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
   align-items: center;
-  grid-gap: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .flip-card {
@@ -95,6 +96,14 @@ h1 {
       <h1>Sam's Care Package</h1>
       <div class="grid">
 
+  <section id="Introduction message">
+    <div class="container">
+      <p>I hope the surgery went well, and the package arrived with the contents in-tact.</p> 
+      <p>I made this landing page as an online version of the notes I included in your package.</p> 
+      <p>Hover your mouse over each one to see what the note says.</p>
+    </div>
+  </section>
+<div class="wrapper">
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
@@ -184,7 +193,7 @@ h1 {
     </div>
   </div>
 </div>
-
+</div>
 </div>
 </div>
 </section>
